@@ -16,3 +16,10 @@ $ cmake --build build --parallel
 ```bash
 $ build/bin/run_tests
 ```
+
+## Code coverage
+
+This project offers two methods to view code coverage:
+
+* HTML artifacts with code test coverage details are available on each commit
+* To configure [codecov.io](codecov.io) follow the official documentation. Token secrets: `CODECOV_TOKEN`
