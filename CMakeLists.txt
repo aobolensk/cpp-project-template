@@ -6,6 +6,10 @@ include(cmake/configure.cmake)
 
 include_directories(include)
 
+enable_testing()
+
+add_subdirectory(3rdparty)
 add_subdirectory(app)
 add_subdirectory(include)
 add_subdirectory(src)
+add_subdirectory(test)
