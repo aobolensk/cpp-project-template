@@ -1,3 +1,10 @@
+<!--  Modify README.md file in the actual repository for your needs -->
+
+[![Build application](https://github.com/aobolensk/cpp-project-template/actions/workflows/main.yml/badge.svg)](https://github.com/aobolensk/cpp-project-template/actions/workflows/main.yml)
+[![Static analysis](https://github.com/aobolensk/cpp-project-template/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/aobolensk/cpp-project-template/actions/workflows/static-analysis.yml)
+[![CodeQL](https://github.com/aobolensk/cpp-project-template/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/aobolensk/cpp-project-template/actions/workflows/codeql-analysis.yml)
+
+
 # C++ project template
 
 This template is designed for quick start of C++ project.
