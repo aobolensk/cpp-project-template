@@ -143,7 +143,7 @@ jobs:
     - name: Generate gcovr Coverage Data
       run: |
         cd build
-        gcovr -r ../ --xml --output ../coverage.xml
+        gcovr -r ../include ../src --xml --output ../coverage.xml
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v4.0.1
       with:
