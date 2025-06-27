@@ -12,8 +12,9 @@ This template is designed for quick start of C++ project.
 ## Build
 
 ```bash
-$ git clone https://github.com/aobolensk/cpp-project-template --recusive
+$ git clone https://github.com/aobolensk/cpp-project-template --recursive
 $ cd cpp-project-template
+$ git submodule update --init --recursive
 $ cmake -S . -B build
 $ cmake --build build --parallel
 ```
