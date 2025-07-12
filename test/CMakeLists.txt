@@ -7,3 +7,5 @@ target_link_libraries(run_tests PUBLIC
 
 include(GoogleTest)
 gtest_discover_tests(run_tests)
+
+enable_testing()
