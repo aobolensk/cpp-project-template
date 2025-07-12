@@ -21,7 +21,7 @@ $ cmake --build build --parallel
 ## Test
 
 ```bash
-$ build/bin/run_tests
+$ ctest --test-dir build
 ```
 
 ## Code coverage
