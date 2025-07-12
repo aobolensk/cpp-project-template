@@ -5,7 +5,9 @@ target_link_libraries(run_tests PUBLIC
     gtest_main
 )
 
-include(GoogleTest)
-gtest_discover_tests(run_tests)
+if(NOT WIN32)
+    include(GoogleTest)
+    gtest_discover_tests(run_tests)
 
-enable_testing()
+    enable_testing()
+endif()
