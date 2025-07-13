@@ -3,6 +3,7 @@
 [![Build application](https://github.com/aobolensk/cpp-project-template/actions/workflows/main.yml/badge.svg)](https://github.com/aobolensk/cpp-project-template/actions/workflows/main.yml)
 [![Static analysis](https://github.com/aobolensk/cpp-project-template/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/aobolensk/cpp-project-template/actions/workflows/static-analysis.yml)
 [![CodeQL](https://github.com/aobolensk/cpp-project-template/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/aobolensk/cpp-project-template/actions/workflows/codeql-analysis.yml)
+[![pre-commit](https://github.com/aobolensk/cpp-project-template/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/aobolensk/cpp-project-template/actions/workflows/pre-commit.yml)
 
 
 # C++ project template
