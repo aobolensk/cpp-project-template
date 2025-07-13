@@ -10,6 +10,17 @@ jobs:
       - uses: DoozyX/clang-format-lint-action@v0.20
         with:
           source: '.'
+  cmake-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install cmakelang
+        run: |
+          python3 -m pip install cmakelang
+      - name: Check CMake formatting
+        run: cmake-format --check $(git ls-files '*.cmake' 'CMakeLists.txt')
+      - name: Run cmake-lint
+        run: cmake-lint $(git ls-files '*.cmake' 'CMakeLists.txt')
   python-lint:
     runs-on: ubuntu-latest
     steps:
