@@ -63,7 +63,7 @@ CheckOptions:
   - key: readability-identifier-naming.TemplateParameterCase
     value: CamelCase
   - key: readability-identifier-naming.FunctionCase
-    value: aNy_CasE
+    value: lower_case
   - key: readability-identifier-naming.VariableCase
     value: lower_case
   - key: readability-identifier-naming.ClassMemberCase
@@ -100,3 +100,5 @@ CheckOptions:
     value: 1
   - key: readability-function-cognitive-complexity.IgnoreMacros
     value: 1
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: UPPER_CASE
