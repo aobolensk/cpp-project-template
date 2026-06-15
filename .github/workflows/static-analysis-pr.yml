@@ -9,29 +9,38 @@ jobs:
       - uses: actions/checkout@v5
         with:
           submodules: recursive
+          fetch-depth: 0
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build ccache wget gnupg lsb-release software-properties-common
+          wget -q https://apt.llvm.org/llvm.sh
+          chmod +x llvm.sh
+          sudo ./llvm.sh 22 all
+          rm llvm.sh
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2
         with:
           key: ${{ github.job }}
-      - uses: ZedThree/clang-tidy-review@v0.21.0
+          create-symlink: true
+      - name: Configure
+        run: >
+          cmake -S . -B build
+          -GNinja
+          -DCMAKE_C_COMPILER_LAUNCHER=ccache
+          -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+          -DCMAKE_BUILD_TYPE=Release
+          -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+        env:
+          CC: clang-22
+          CXX: clang++-22
+      - uses: aobolensk/clang-tidy-action@v1
         id: review
         name: Run clang-tidy
         with:
           build_dir: build
-          apt_packages: ninja-build
-          cmake_command: >
-            cmake -S . -B build
-            -DCMAKE_C_COMPILER_LAUNCHER=ccache
-            -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
-            -DCMAKE_BUILD_TYPE=Release
-            -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-          config_file: .clang-tidy
-          exclude: 3rdparty
-          split_workflow: true
-          lgtm_comment_body: ""
-        env:
-          CC: clang-16
-          CXX: clang++-16
+          exclude: "3rdparty build"
+          clang_tidy_version: "22"
       - if: steps.review.outputs.total_comments > 0
         run: |
           echo "clang-tidy run has failed. See 'Run clang-tidy' stage logs"
